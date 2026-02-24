@@ -24,6 +24,9 @@ async function summarizeTranscript(config, transcript) {
 
   if (config.provider === 'anthropic') {
     return await callAnthropic(config.apiKey, config.model, systemPrompt, userMessage);
+  } else if (config.provider === 'gemini') {
+    const geminiBase = 'https://generativelanguage.googleapis.com/v1beta/openai';
+    return await callOpenAI(config.apiKey, geminiBase, config.model || 'gemini-2.5-flash', systemPrompt, userMessage);
   } else {
     return await callOpenAI(config.apiKey, config.baseUrl, config.model, systemPrompt, userMessage);
   }

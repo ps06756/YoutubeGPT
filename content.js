@@ -188,7 +188,7 @@
         const hasConfig = result.provider && result.apiKey;
 
         if (hasConfig) {
-          const label = result.provider === 'anthropic' ? 'Anthropic' : 'OpenAI-compatible';
+          const label = result.provider === 'anthropic' ? 'Anthropic' : result.provider === 'gemini' ? 'Gemini' : 'OpenAI-compatible';
           statusEl.textContent = `Using ${label} API \u2713`;
           statusEl.style.color = '#4caf50';
           clearBtn.style.display = 'block';

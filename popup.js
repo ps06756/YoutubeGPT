@@ -23,11 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
     { value: '__custom__', label: 'Custom...' },
   ];
 
+  const GEMINI_MODELS = [
+    { value: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash' },
+    { value: 'gemini-2.5-pro', label: 'Gemini 2.5 Pro' },
+    { value: '__custom__', label: 'Custom...' },
+  ];
+
   // Old storage keys to clean up on save
   const OLD_KEYS = ['anthropicApiKey', 'openaiApiKey', 'openaiBaseUrl', 'openaiModel'];
 
   function populateModels(provider) {
-    const models = provider === 'anthropic' ? ANTHROPIC_MODELS : OPENAI_MODELS;
+    const models = provider === 'anthropic' ? ANTHROPIC_MODELS : provider === 'gemini' ? GEMINI_MODELS : OPENAI_MODELS;
     modelSelect.innerHTML = '';
     models.forEach((m) => {
       const opt = document.createElement('option');
@@ -51,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     stepCredentials.style.display = 'block';
     const provider = providerSelect.value;
     baseUrlGroup.style.display = provider === 'openai' ? 'block' : 'none';
+    apiKeyInput.placeholder = provider === 'gemini' ? 'AIza...' : 'sk-...';
   }
 
   function hideStep3() {
@@ -120,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
           modelSelect.value = result.model;
         } else {
           // It's a custom model — select "Custom..." and fill the input
-          if (result.provider === 'openai') {
+          if (result.provider === 'openai' || result.provider === 'gemini') {
             modelSelect.value = '__custom__';
             customModelInput.value = result.model;
             customModelInput.style.display = 'block';
