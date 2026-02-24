@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - YouTube Video Summarizer</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #1a1a1a;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2a2a2a;
+            margin-top: 30px;
+        }
+        a {
+            color: #0066cc;
+        }
+        .last-updated {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy for YouTube Video Summarizer</h1>
+    <p class="last-updated">Last Updated: February 23, 2026</p>
+
+    <h2>Overview</h2>
+    <p>YouTube Video Summarizer is a Chrome extension that helps users summarize YouTube videos using AI. We are committed to protecting your privacy and being transparent about how we handle data.</p>
+
+    <h2>Data Collection</h2>
+    <p>This extension does <strong>NOT</strong> collect, store, or transmit any personal data to our servers. All processing happens locally in your browser or through direct API calls to your chosen AI provider.</p>
+
+    <h2>API Key Storage</h2>
+    <ul>
+        <li>Your API key (Anthropic or OpenAI-compatible) is stored locally in your browser using Chrome's <code>storage.local</code> API</li>
+        <li>The key is stored only on your device and never leaves it except when making direct API calls to your chosen provider</li>
+        <li>We do not have access to your API key</li>
+    </ul>
+
+    <h2>External API Calls</h2>
+    <ul>
+        <li>Video transcripts are sent directly to your chosen AI provider's API (Anthropic or OpenAI-compatible)</li>
+        <li>No data passes through our servers</li>
+        <li>All API requests are made directly from your browser to the AI provider</li>
+    </ul>
+
+    <h2>Permissions Justification</h2>
+    <ul>
+        <li><strong>storage:</strong> To save your API key and preferences locally in your browser</li>
+        <li><strong>activeTab:</strong> To inject the summary sidebar on YouTube video pages</li>
+        <li><strong>youtube.com host permission:</strong> To fetch video transcripts from YouTube pages</li>
+        <li><strong>api.anthropic.com / OpenAI-compatible hosts:</strong> To send transcripts for summarization</li>
+    </ul>
+
+    <h2>Third-Party Services</h2>
+    <p>This extension interacts with the following third-party services based on your configuration:</p>
+    <ul>
+        <li><strong>Anthropic API</strong> (optional, user-configured): Processes transcripts for summarization</li>
+        <li><strong>OpenAI-compatible APIs</strong> (optional, user-configured): Alternative for summarization</li>
+        <li><strong>YouTube</strong>: Source of video transcripts</li>
+    </ul>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date.</p>
+
+    <h2>Contact</h2>
+    <p>If you have any questions about this privacy policy, please open an issue on our <a href="https://github.com/ps06756/youtube-summary-chrome-extension">GitHub repository</a>.</p>
+</body>
+</html>
